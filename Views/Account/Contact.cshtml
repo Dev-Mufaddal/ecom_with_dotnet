@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <!-- Google Font for modern typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" asp-append-version="true" />
+    <!-- Font Awesome icons (optional but nice) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/css/contact.css" asp-append-version="true"/>
+
+
+    <div class="contact-card">
+        <div class="row g-0">
+            <!-- Left column with animated SVG -->
+            <div class="col-lg-5 left-panel">
+                <div class="svg-container">
+                    <!-- Custom animated SVG: chat bubble with typing dots and envelope drawing -->
+                    <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background circle (pulsing) -->
+                        <circle cx="100" cy="70" r="45" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="r" values="45;48;45" dur="3s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Chat bubble outline -->
+                        <path d="M60 40 L140 40 Q150 40 150 50 L150 90 Q150 100 140 100 L110 100 L100 115 L90 100 L60 100 Q50 100 50 90 L50 50 Q50 40 60 40Z"
+                              class="chat-bubble" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.5" />
+
+                        <!-- Three typing dots inside bubble (animated) -->
+                        <circle cx="80" cy="70" r="6" class="dot dot1" fill="white" />
+                        <circle cx="100" cy="70" r="6" class="dot dot2" fill="white" />
+                        <circle cx="120" cy="70" r="6" class="dot dot3" fill="white" />
+
+                        <!-- Envelope / letter drawing at bottom (animated lines) -->
+                        <g transform="translate(40, 110)">
+                            <!-- Envelope base -->
+                            <rect x="20" y="5" width="80" height="40" rx="4" fill="none" stroke="white" stroke-width="2" />
+                            <!-- Envelope flap -->
+                            <path d="M20 5 L60 25 L100 5" stroke="white" stroke-width="2" fill="none" class="envelope-line" />
+                            <!-- Horizontal line (simulating letter) -->
+                            <line x1="35" y1="18" x2="85" y2="18" stroke="white" stroke-width="2" stroke-dasharray="4 4">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite" />
+                            </line>
+                            <!-- Second line -->
+                            <line x1="35" y1="28" x2="70" y2="28" stroke="white" stroke-width="2" stroke-dasharray="4 4">
+                                <animate attributeName="stroke-dashoffset" values="0;8;0" dur="2s" repeatCount="indefinite" begin="0.5s" />
+                            </line>
+                        </g>
+
+                        <!-- Small floating dots around (for extra motion) -->
+                        <circle cx="30" cy="20" r="3" fill="white" opacity="0.6">
+                            <animate attributeName="cy" values="20;30;20" dur="4s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="170" cy="130" r="4" fill="white" opacity="0.5">
+                            <animate attributeName="cx" values="170;160;170" dur="5s" repeatCount="indefinite" />
+                            <animate attributeName="r" values="4;6;4" dur="5s" repeatCount="indefinite" />
+                        </circle>
+                    </svg>
+                </div>
+                <h2 class="fw-bold mb-3">Let’s Connect</h2>
+                <p class="mb-4">We’d love to hear from you. Send us a message and we’ll respond as soon as possible.</p>
+                <div class="mt-2">
+                    <p><i class="fas fa-phone-alt me-2"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i> hello@example.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Business St, City, Country</p>
+                </div>
+            </div>
+
+            <!-- Right column with contact form -->
+            <div class="col-lg-7 right-panel">
+                <h2 class="fw-bold mb-4" style="color: #333;">Send a Message</h2>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-500">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-500">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="subject" class="form-label fw-500">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Inquiry about services">
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label fw-500">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-submit">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <hr class="my-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted">Follow us:</span>
+                    <div>
+                        <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-dark me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS (optional for certain components, but not required for basic functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- No extra JS needed for animations; they are pure CSS/SVG -->

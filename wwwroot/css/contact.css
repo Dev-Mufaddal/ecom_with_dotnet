@@ -1,0 +1,52 @@
+﻿/* ================= CONTACT PAGE ================= */
+
+.contact-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0; /* space below navbar */
+    min-height: 100vh;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.left-panel {
+    background: linear-gradient(145deg, #5f2c82, #49a09d);
+    padding: 60px 40px;
+    color: white;
+}
+
+.right-panel {
+    padding: 60px 40px;
+    background: white;
+}
+
+.form-control {
+    border-radius: 12px;
+    padding: 12px 18px;
+}
+
+    .form-control:focus {
+        border-color: #5f2c82;
+        box-shadow: 0 0 0 0.2rem rgba(95, 44, 130, 0.25);
+    }
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 30px;
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+    .btn-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }

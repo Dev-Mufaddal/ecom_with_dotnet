@@ -1,0 +1,58 @@
+﻿@model Authentication.Models.User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="auth-form">
+
+    <a asp-controller="Home" asp-action="Index" class="back-home-top">
+        <i class="bi bi-house"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+        </svg>
+        Home
+    </a>
+
+    <h2>Sign In</h2>
+
+    <form asp-action="Login" method="post">
+
+        <div>
+            <label asp-for="Username"></label>
+            <input asp-for="Username" placeholder="Enter your username" required />
+            <span asp-validation-for="Username" class="validation-message"></span>
+        </div>
+
+        <div>
+            <label asp-for="Password"></label>
+
+            <input asp-for="Password" placeholder="Enter your password" type="password" required />
+
+            <span class="toggle-icon">
+                <i class="fa fa-eye"></i>
+            </span>
+
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+
+        <button type="submit">Log in</button>
+
+        <a asp-action="Register">New here? Create account</a>
+
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <p style="color:red; margin-top:15px; text-align:center;">
+            @ViewBag.Message
+        </p>
+    }
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
