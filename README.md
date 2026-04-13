@@ -22,7 +22,7 @@ Whether you're exploring ASP.NET architecture or looking for a reference impleme
 - Add to cart, update cart items
 - Place orders with full checkout flow
 - REST API-based data communication
-- Dummy payment gateway integration
+- **Razorpay** payment gateway integration
 - Responsive, mobile-friendly UI
 
 ### 🛠️ Admin Features
@@ -55,13 +55,14 @@ Whether you're exploring ASP.NET architecture or looking for a reference impleme
 | **Bootstrap** | Responsive, mobile-first UI components |
 | **JavaScript** | Client-side interactivity |
 | **Visual Studio** | Primary IDE |
+| **Razorpay** | Payment gateway integration |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-ecom_with_dotnet/
+Vaultmart_dotnet/
 │
 ├── Controllers/           # Handles request logic & routing
 ├── Models/                # Business logic and entity definitions
@@ -152,6 +153,7 @@ This project demonstrates practical understanding of:
 - Session handling and authentication patterns
 - Responsive frontend development with Bootstrap
 - N-Tier architecture and clean code principles
+- Payment gateway integration (Razorpay)
 - GitHub version control workflow
 
 ---
@@ -164,7 +166,7 @@ This project demonstrates practical understanding of:
 - [ ] Docker containerization
 - [ ] Advanced caching with Redis
 - [ ] Product search and filtering enhancements
-- [ ] Real payment gateway integration
+- [ ] Razorpay webhook handling & payment verification
 - [ ] Inventory management in admin panel
 
 ---
