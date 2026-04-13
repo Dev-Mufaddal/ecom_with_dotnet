@@ -1,154 +1,179 @@
-# 🛒 E-Commerce Web Application using .NET
+# 🏪 Vaultmart
+
+> **Secure. Scalable. Seamless Shopping.**
+
+Vaultmart is a full-featured E-Commerce Web Application built with **ASP.NET, C#, Entity Framework, and SQL Server**, following a clean and scalable **MVC / N-Tier architecture**. From browsing products to completing checkout, Vaultmart delivers a structured, production-minded shopping experience backed by robust REST APIs and a powerful admin panel.
+
+---
 
 ## 📌 Overview
 
-This project is a **full-featured E-Commerce Web Application** developed using **ASP.NET, C#, Entity Framework, SQL Server, and REST APIs**, following a clean and scalable **N-Tier / MVC architecture**.
+Vaultmart was designed to demonstrate end-to-end implementation of a real-world online shopping system using the .NET ecosystem. It separates UI, business logic, and data access layers for maintainability and scalability — making it an ideal portfolio and resume project showcasing strong **.NET backend development** skills.
 
-The application simulates a real-world online shopping system where users can browse products, manage cart items, place orders, and complete payments. It also includes an **admin panel** for managing products and application data.
-
-This project demonstrates strong knowledge of **.NET backend development**, **database integration**, **RESTful services**, and **responsive UI design**, making it suitable for **resume and portfolio presentation**.
-
-Modern .NET applications commonly separate UI, business logic, and data access layers to improve maintainability and scalability. ([C# Corner][1])
+Whether you're exploring ASP.NET architecture or looking for a reference implementation of a clean MVC e-commerce app, Vaultmart provides a solid, well-structured foundation.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
 ### 👤 User Features
-
-* User Registration & Login Authentication
-* Browse product catalog
-* Search products
-* Add to Cart functionality
-* Update cart items
-* Place orders
-* REST API-based data communication
-* Payment integration (dummy gateway if implemented)
-* Responsive UI
+- User registration & login with authentication
+- Browse and search product catalog
+- Add to cart, update cart items
+- Place orders with full checkout flow
+- REST API-based data communication
+- Dummy payment gateway integration
+- Responsive, mobile-friendly UI
 
 ### 🛠️ Admin Features
+- Secure admin login
+- Add, update, and delete products
+- Manage product listings
+- Full CRUD operations on application data
 
-* Admin login functionality
-* Add new products
-* Update product details
-* Delete products
-* Manage product listings
-* Perform CRUD operations
-
-### ⚙️ System Features
-
-* N-Tier / MVC architecture
-* REST API integration
-* Entity Framework ORM support
-* SQL Server database connectivity
-* Authentication & session handling
-* Structured and scalable project design
-* Separation of concerns for maintainability
-* Clean code architecture
-
-Repository pattern and layered architecture help maintain separation between business logic and database operations, improving scalability and testability. ([DEV Community][2])
+### ⚙️ System & Architecture
+- Clean **MVC / N-Tier architecture** with separation of concerns
+- **Entity Framework ORM** for database operations
+- **REST API** integration for structured data communication
+- **SQL Server** database connectivity
+- Session-based authentication & route protection
+- Scalable, maintainable project structure
+- Structured error handling
 
 ---
 
-## 🧑‍💻 Technologies Used
+## 🛠️ Tech Stack
 
-| Category             | Technology           |
-| -------------------- | -------------------- |
-| Programming Language | C#                   |
-| Framework            | ASP.NET              |
-| Architecture         | MVC / N-Tier         |
-| ORM                  | Entity Framework     |
-| Database             | SQL Server           |
-| API                  | REST API             |
-| Frontend             | HTML, CSS, Bootstrap |
-| IDE                  | Visual Studio        |
-| Version Control      | Git, GitHub          |
+| Technology | Purpose |
+|---|---|
+| **C#** | Core backend language |
+| **ASP.NET MVC** | Web framework — routing, controllers, server logic |
+| **Entity Framework** | ORM for database operations |
+| **SQL Server** | Relational database for users, products, orders |
+| **REST API** | Structured client-server communication |
+| **HTML5 / CSS3** | Page structure and custom styling |
+| **Bootstrap** | Responsive, mobile-first UI components |
+| **JavaScript** | Client-side interactivity |
+| **Visual Studio** | Primary IDE |
 
 ---
 
 ## 📂 Project Structure
 
-```bash
-ecom_with_dotnet
+```
+ecom_with_dotnet/
 │
-├── Controllers        → Handles request logic
-├── Models             → Business logic and entities
-├── Views              → UI pages
-├── Data               → Database context
-├── Services           → Business services
-├── API                → REST API endpoints
+├── Controllers/           # Handles request logic & routing
+├── Models/                # Business logic and entity definitions
+├── Views/                 # Razor UI pages
+├── Data/                  # Database context (EF)
+├── Services/              # Business service layer
+├── API/                   # REST API endpoints
+├── wwwroot/               # Static assets (CSS, JS, images)
+├── appsettings.json       # App configuration & connection strings
 └── README.md
 ```
 
-Well-structured .NET repositories typically separate application layers into folders such as **src, tests, and services** for better maintainability and scalability. ([DotNet Template][3])
-
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Installation & Setup
 
-### 1️⃣ Clone Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Dev-Mufaddal/ecom_with_dotnet.git
+git clone https://github.com/Dev-Mufaddal/Vaultmart_dotnet.git
+cd Vaultmart_dotnet
 ```
 
-### 2️⃣ Open in Visual Studio
+### 2. Open in Visual Studio
 
-Open the solution file (.sln) using:
+Open the solution file (`.sln`) using **Visual Studio 2019 or later**.
 
-* Visual Studio 2019 or later
+### 3. Configure the Database
 
-### 3️⃣ Configure Database
-
-Update connection string in:
-
-```json
-appsettings.json
-```
-
-Example:
+Update the connection string in `appsettings.json`:
 
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "Server=.;Database=EcommerceDB;Trusted_Connection=True;"
+  "DefaultConnection": "Server=.;Database=VaultmartDB;Trusted_Connection=True;"
 }
 ```
 
-### 4️⃣ Run Application
+### 4. Apply Migrations
 
-Run the project using IIS Express or Kestrel server from Visual Studio.
+In the **Package Manager Console**, run:
 
-Application will open in browser automatically.
+```bash
+Update-Database
+```
+
+### 5. Run the Application
+
+Press **F5** or run via IIS Express / Kestrel from Visual Studio.
+
+Visit `http://localhost:{port}` in your browser.
+
+---
+
+## 🌐 Application Routes
+
+| Route | Description | Access |
+|---|---|---|
+| `/` | Home / product listing | Public |
+| `/Account/Register` | User registration | Public |
+| `/Account/Login` | User login | Public |
+| `/Products` | Browse product catalog | Authenticated |
+| `/Cart` | View and manage cart | Authenticated |
+| `/Orders` | Place and view orders | Authenticated |
+| `/Account/Logout` | End session | Authenticated |
+| `/Admin` | Admin control panel | Admin only |
+| `/Admin/Products` | Manage products | Admin only |
+
+---
+
+## 🔒 Security Practices
+
+- **Session Authentication** — Route protection for authenticated and admin-only pages
+- **Entity Framework Parameterization** — ORM queries prevent SQL injection by default
+- **Input Validation** — Both client-side (JS) and server-side (C#) validation
+- **Separation of Concerns** — Business logic isolated from UI and data layers
+- **Clean Architecture** — Repository pattern keeps data access maintainable and testable
 
 ---
 
 ## 🎯 Skills Demonstrated
 
-* ASP.NET Web Development
-* MVC / N-Tier Architecture
-* Entity Framework ORM
-* REST API Development
-* SQL Server Database Integration
-* Authentication & Authorization
-* CRUD Operations
-* Clean Architecture Principles
-* GitHub Version Control
+This project demonstrates practical understanding of:
+
+- ASP.NET MVC application architecture and routing
+- Entity Framework ORM and database-first / code-first workflows
+- REST API design and integration
+- SQL Server database integration with C#
+- Session handling and authentication patterns
+- Responsive frontend development with Bootstrap
+- N-Tier architecture and clean code principles
+- GitHub version control workflow
 
 ---
 
-## 💼 Resume Description
+## 📈 Roadmap & Future Improvements
 
-Developed a full-featured E-Commerce Web Application using ASP.NET, C#, Entity Framework, and SQL Server following MVC architecture. Implemented authentication, product management, REST API integration, and responsive UI. Demonstrates strong backend development skills, database handling, and structured application design.
+- [ ] JWT-based API authentication
+- [ ] Microservices architecture
+- [ ] Cloud deployment (Azure / AWS)
+- [ ] Docker containerization
+- [ ] Advanced caching with Redis
+- [ ] Product search and filtering enhancements
+- [ ] Real payment gateway integration
+- [ ] Inventory management in admin panel
 
 ---
 
-## 🔮 Possible Enhancement
+## 👨‍💻 Author
 
-* JWT Authentication
-* Microservices architecture
-* Cloud deployment (Azure / AWS)
-* Docker containerization
-* Advanced caching (Redis)
+**Mufaddal Kanchwala**
+GitHub: [@Dev-Mufaddal](https://github.com/Dev-Mufaddal)
+Email: mufaddalabbaskanchwala99@gmail.com
 
 ---
 
@@ -156,6 +181,6 @@ Developed a full-featured E-Commerce Web Application using ASP.NET, C#, Entity F
 
 This project is created for educational and portfolio purposes.
 
-[1]: https://www.c-sharpcorner.com/article/building-maintainable-applications-using-the-repository-pattern-in-asp-net-core/Default.aspx?utm_source=chatgpt.com "Building Maintainable Applications Using the Repository Pattern in ASP.NET Core"
-[2]: https://dev.to/osempu/repository-pattern-implementation-in-aspnet-core-3nkj?utm_source=chatgpt.com "Repository Pattern Implementation in ASP.NET Core - DEV Community"
-[3]: https://dotnet-template.github.io/project-layout/?utm_source=chatgpt.com "Standard .NET Project Layout"
+---
+
+⭐ If you found this project useful or interesting, consider starring the repository!
